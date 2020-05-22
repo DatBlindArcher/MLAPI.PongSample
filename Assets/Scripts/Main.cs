@@ -15,14 +15,18 @@ public class Main : MonoBehaviour
         SceneManager.LoadScene("OfflineGame");
     }
 
-    public void PlayClient()
+    public void PlayClient(bool host)
     {
+        NetworkingManager.Singleton.NetworkConfig.NetworkedPrefabs[0].PlayerPrefab = host;
+        NetworkingManager.Singleton.NetworkConfig.NetworkedPrefabs[2].PlayerPrefab = !host;
         NetworkingManager.Singleton.StartClient();
     }
 
     public void PlayHost()
     {
         game = "HostGame";
+        NetworkingManager.Singleton.NetworkConfig.NetworkedPrefabs[0].PlayerPrefab = true;
+        NetworkingManager.Singleton.NetworkConfig.NetworkedPrefabs[2].PlayerPrefab = false;
         NetworkingManager.Singleton.OnClientConnectedCallback += CheckPlayers;
         NetworkingManager.Singleton.StartHost();
     }
@@ -30,8 +34,10 @@ public class Main : MonoBehaviour
     public void PlayServer()
     {
         game = "ServerGame";
+        NetworkingManager.Singleton.NetworkConfig.NetworkedPrefabs[0].PlayerPrefab = false;
+        NetworkingManager.Singleton.NetworkConfig.NetworkedPrefabs[2].PlayerPrefab = true;
         NetworkingManager.Singleton.OnClientConnectedCallback += CheckPlayers;
-        NetworkingManager.Singleton.StartHost();
+        NetworkingManager.Singleton.StartServer();
     }
 
     private void CheckPlayers(ulong client)

@@ -334,14 +334,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1522473000}
         m_MethodName: PlayClient
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &79380779
 MonoBehaviour:
@@ -463,14 +463,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1522473000}
         m_MethodName: PlayClient
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &260258880
 MonoBehaviour:
@@ -1715,6 +1715,7 @@ MonoBehaviour:
     - Main
     - OfflineGame
     - HostGame
+    - ServerGame
     AllowRuntimeSceneChanges: 0
     NetworkedPrefabs:
     - Prefab: {fileID: 2369691596392369277, guid: aa46d2626b6091b49b2a042e3b8eabc2,
@@ -1723,8 +1724,14 @@ MonoBehaviour:
     - Prefab: {fileID: 4453522554428559333, guid: 71e913c296601c2428e4b0b6a9cce4c9,
         type: 3}
       PlayerPrefab: 0
+    - Prefab: {fileID: 1213720938899675399, guid: 32fb82dd2755ee141909ddac9c2dd1c7,
+        type: 3}
+      PlayerPrefab: 0
+    - Prefab: {fileID: 7479164778769990006, guid: 6c1993c20bdc4e84ebda4dc853932dad,
+        type: 3}
+      PlayerPrefab: 0
     PlayerPrefabHash:
-      Value: 10863744970953208463
+      Value: 10209300819453960881
     CreatePlayerPrefab: 0
     ReceiveTickrate: 64
     MaxReceiveEventsPerTickRate: 500

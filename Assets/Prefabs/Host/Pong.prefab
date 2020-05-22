@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkedInstanceId: 0
-  PrefabHash: 10863744970953208463
-  PrefabHashGenerator: Pong
+  PrefabHash: 10209300819453960881
+  PrefabHashGenerator: HostPong
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
 --- !u!114 &2369691596392369248
