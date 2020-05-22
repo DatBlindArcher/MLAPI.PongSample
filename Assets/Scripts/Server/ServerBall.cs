@@ -107,6 +107,7 @@ public class ServerBall : Entity<BallState>
 public class BallState : IEntityState
 {
     public uint Tick { get; }
+    public bool IsServerState { get; }
     public Vector2 Position { get; private set; }
     public float Angle { get; private set; }
 
@@ -115,11 +116,13 @@ public class BallState : IEntityState
         Tick = tick;
         Position = position;
         Angle = angle;
+        IsServerState = EntityNetwork.Singleton.IsServer;
     }
 
     public BallState(uint tick, PooledBitReader reader)
     {
         Tick = tick;
+        IsServerState = true;
         Position = reader.ReadVector2();
         Angle = reader.ReadSingle();
     }

@@ -57,6 +57,9 @@ public abstract class Entity<TState> : Entity where TState : IEntityState
 
             if (node.Value.Tick == tick)
             {
+                if (node.Value.IsServerState)
+                    return;
+
                 stateBuffer.AddBefore(node, state);
                 stateBuffer.Remove(node);
                 return;

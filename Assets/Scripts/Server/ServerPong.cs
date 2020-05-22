@@ -86,17 +86,20 @@ public class PongInput : IEntityInput
 public class PongState : IEntityState
 {
     public uint Tick { get; }
+    public bool IsServerState { get; }
     public float Height { get; private set; }
 
     public PongState(uint tick, float height)
     {
         Tick = tick;
         Height = height;
+        IsServerState = EntityNetwork.Singleton.IsServer;
     }
 
     public PongState(uint tick, PooledBitReader reader)
     {
         Tick = tick;
+        IsServerState = true;
         Height = reader.ReadSingle();
     }
 
